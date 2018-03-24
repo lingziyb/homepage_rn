@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import Header from '../components/Header'
 import AdaptionImage from '../components/AdaptionImage'
+import { Toast } from 'antd-mobile'
 import utils from '../utils'
 
 export default class AlbumInfo extends Component {
@@ -25,11 +26,13 @@ export default class AlbumInfo extends Component {
 
 	//获取相册集
 	getGroup(){
+		Toast.loading('加载中...')
 		utils.axios.get('album/group',{
 			params:{
 				id:this.props.navigation.state.params.id
 			}
 		}).then(res => {
+			Toast.hide()
 			this.setState({list:res.data.data})
 		})
 	}

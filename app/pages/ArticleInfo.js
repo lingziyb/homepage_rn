@@ -40,6 +40,7 @@ export default class ArticleInfo extends Component {
 
 	//获取详情
 	getInfo(){
+		Toast.loading('加载中...')
 		utils.axios.get('article/info',{
 			params:{
 				id:this.props.navigation.state.params.id
@@ -50,6 +51,7 @@ export default class ArticleInfo extends Component {
 				title:data.title,
 				content:data.content
 			})
+			Toast.hide()
 		})
 	}
 

@@ -13,8 +13,8 @@ export default class AdaptionImage extends Component {
 		}
 	}
 
-	_onLoad(url){
-		Image.getSize(url,(width,height) => {
+	componentDidMount() {
+		Image.getSize(this.props.url,(width,height) => {
 			this.setState({
 				height:height * this.props.width / width
 			})
@@ -26,8 +26,7 @@ export default class AdaptionImage extends Component {
 			<Image
 				{...this.props}
 				style={[styles.image,{height:this.state.height}]}
-				source={{uri:this.props.url}}
-				onLoad={this._onLoad(this.props.url)}/>
+				source={{uri:this.props.url}}/>
 		);
 	}
 }

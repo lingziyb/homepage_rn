@@ -39,7 +39,17 @@ Axios.interceptors.response.use(
 			return Promise.reject(res.data.Msg);
 		}
 		return res;
+	},
+	error => {
+		if(error.message.indexOf('timeout') > -1){
+			Toast.fail('请求超时,请检查网络', 1);
+		}
+		if(error.message.indexOf('Network Error') > -1){
+			Toast.fail('当前无网络,请检查网络', 1);
+		}
+		return Promise.reject(error.message);
 	}
+
 );
 
 export default {axios:Axios}

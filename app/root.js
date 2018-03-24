@@ -17,10 +17,18 @@ import Album from './pages/Album'
 import AlbumInfo from './pages/AlbumInfo'
 import Douban from './pages/Douban'
 import TimeInfo from './pages/TimeInfo'
+import DoubanInfo from './pages/DoubanInfo'
+import OneInfo from './pages/OneInfo'
 
 const Magazine = StackNavigator({
 	One:{
 		screen:One,
+		navigationOptions:{
+			header:null
+		}
+	},
+	OneInfo:{
+		screen:OneInfo,
 		navigationOptions:{
 			header:null
 		}
@@ -42,6 +50,12 @@ const Movie = StackNavigator({
 	},
 	Douban:{
 		screen:Douban,
+		navigationOptions:{
+			header:null
+		}
+	},
+	DoubanInfo:{
+		screen:DoubanInfo,
 		navigationOptions:{
 			header:null
 		}
@@ -144,7 +158,7 @@ export default TabNavigator({
 },{
 	tabBarPosition: 'bottom',
 	lazy: iOS?true:false,
-	initialRouteName:'Movie',
+	initialRouteName:'Blog',
 	swipeEnabled:false,
 	animationEnabled:false,
 	tabBarOptions: {
