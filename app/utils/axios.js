@@ -2,7 +2,7 @@ import axios from 'axios'
 import qs from 'qs'
 import { Toast } from 'antd-mobile';
 const Axios = axios.create({
-	baseURL: "http://localhost:3000/api/",
+	baseURL: "http://localhost:3001/api/",
 	// baseURL:'http://www.3zsd.cn:3000/api/',
 	timeout: 10000,
 	responseType: "json",

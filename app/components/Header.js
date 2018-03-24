@@ -10,13 +10,28 @@ import {
 export default (props) => {
 	return (
 		<View style={styles.header}>
-			<View style={styles.iconLeft}>{props.left}</View>
+			<View style={styles.iconLeft}>
+				{
+					props.back ?
+						<TouchableOpacity onPress={() => props.navigation.goBack()}>
+							<Image style={styles.backIcon} source={require('../assets/back.png')}/>
+						</TouchableOpacity>
+						:
+						null
+				}
+			</View>
 			<Text numberOfLines={1} style={styles.headerTitle}>{props.title}</Text>
 			<View style={styles.iconRight}>
-				<TouchableOpacity style={styles.menu} onPress={() => props.open()}>
-					<Image style={styles.menuIcon} source={require('../assets/menu.png')}/>
-				</TouchableOpacity>
+				{
+					props.menu ?
+						<TouchableOpacity style={styles.menu} onPress={() => props.open()}>
+							<Image style={styles.menuIcon} source={require('../assets/menu.png')}/>
+						</TouchableOpacity>
+						:
+						null
+				}
 			</View>
+
 
 		</View>
 	)
@@ -32,7 +47,9 @@ const styles = StyleSheet.create({
 		alignItems:'center',
 		backgroundColor:'#fff',
 		paddingLeft:15,
-		paddingRight:15
+		paddingRight:15,
+		borderBottomWidth:1,
+		borderBottomColor:'#ccc'
 	},
 	headerTitle:{
 		fontSize:17,
@@ -54,5 +71,9 @@ const styles = StyleSheet.create({
 	menuIcon:{
 		width:30,
 		height:30
+	},
+	backIcon:{
+		width:28,
+		height:28
 	}
 })

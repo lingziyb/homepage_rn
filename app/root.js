@@ -12,6 +12,11 @@ import One from './pages/One'
 import Time from './pages/Time'
 import Weather from './pages/Weather'
 import Article from './pages/Article'
+import ArticleInfo from  './pages/ArticleInfo'
+import Album from './pages/Album'
+import AlbumInfo from './pages/AlbumInfo'
+import Douban from './pages/Douban'
+import TimeInfo from './pages/TimeInfo'
 
 const Magazine = StackNavigator({
 	One:{
@@ -28,7 +33,21 @@ const Movie = StackNavigator({
 		navigationOptions:{
 			header:null
 		}
+	},
+	TimeInfo:{
+		screen:TimeInfo,
+		navigationOptions:{
+			header:null
+		}
+	},
+	Douban:{
+		screen:Douban,
+		navigationOptions:{
+			header:null
+		}
 	}
+},{
+	initialRouteName:'Time'
 })
 
 const Tool = StackNavigator({
@@ -46,7 +65,27 @@ const Blog = StackNavigator({
 		navigationOptions:{
 			header:null
 		}
+	},
+	ArticleInfo:{
+		screen:ArticleInfo,
+		navigationOptions:{
+			header:null
+		}
+	},
+	Album:{
+		screen:Album,
+		navigationOptions:{
+			header:null
+		}
+	},
+	AlbumInfo:{
+		screen:AlbumInfo,
+		navigationOptions:{
+			header:null
+		}
 	}
+},{
+	initialRouteName:'Article'
 })
 
 export default TabNavigator({
@@ -105,7 +144,7 @@ export default TabNavigator({
 },{
 	tabBarPosition: 'bottom',
 	lazy: iOS?true:false,
-	initialRouteName:'Blog',
+	initialRouteName:'Movie',
 	swipeEnabled:false,
 	animationEnabled:false,
 	tabBarOptions: {

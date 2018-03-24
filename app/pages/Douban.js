@@ -4,12 +4,13 @@ import {
 	Text,
 	View
 } from 'react-native';
+import Header from '../components/Header'
 
 export default class App extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
-
+				<Header title="豆瓣电影" back={true} navigation={this.props.navigation}/>
 			</View>
 		);
 	}
@@ -21,5 +22,3 @@ const styles = StyleSheet.create({
 		backgroundColor:'#f5f5f5'
 	},
 });
-
-//this.props.navigation.navigate('ArticleInfo',{id:id})
