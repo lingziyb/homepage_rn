@@ -164,6 +164,7 @@ export default TabNavigator({
 	tabBarOptions: {
 		style: {
 			height:49,
+			backgroundColor:'#fff'
 		},
 		activeBackgroundColor:'#fff',
 		activeTintColor:'#1296db',
